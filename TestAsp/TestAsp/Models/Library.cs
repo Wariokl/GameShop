@@ -9,6 +9,6 @@ namespace TestAsp.Models
     {
         public int LibraryID { get; set; }
         public int User { get; set; }
-        public int[] Games { get; set; }
+        public int Games { get; set; }
     }
 }

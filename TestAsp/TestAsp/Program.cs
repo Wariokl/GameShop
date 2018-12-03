@@ -25,7 +25,7 @@ namespace TestAsp
         //    .Build();
         WebHost.CreateDefaultBuilder(args)
             .UseStartup<Startup>()
-            //.UseUrls("http://*:1000", "https://*:1234", "http://0.0.0.0:5000")
+           
             .UseKestrel(options =>
             {
                 options.Limits.MaxConcurrentConnections = 100;
@@ -36,7 +36,7 @@ namespace TestAsp
                     new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
                 options.ListenAnyIP(5000);
             })
-            .UseIISIntegration()
+           // .UseIISIntegration()
             .Build();
     }
 }

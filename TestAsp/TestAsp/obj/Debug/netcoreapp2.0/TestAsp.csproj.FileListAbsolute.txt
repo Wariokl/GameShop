@@ -9,3 +9,14 @@ C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.Assem
 C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.AssemblyInfo.cs
 C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.dll
 C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.pdb
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\bin\Debug\netcoreapp2.0\TestAsp.deps.json
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\bin\Debug\netcoreapp2.0\TestAsp.runtimeconfig.json
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\bin\Debug\netcoreapp2.0\TestAsp.runtimeconfig.dev.json
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\bin\Debug\netcoreapp2.0\TestAsp.dll
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\bin\Debug\netcoreapp2.0\TestAsp.pdb
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.csprojAssemblyReference.cache
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.csproj.CoreCompileInputs.cache
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.AssemblyInfoInputs.cache
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.AssemblyInfo.cs
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.dll
+D:\Загрузки.Л\Курсач\GameShop\TestAsp\TestAsp\obj\Debug\netcoreapp2.0\TestAsp.pdb

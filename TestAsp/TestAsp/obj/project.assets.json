@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "Google.Protobuf/3.5.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Google.Protobuf.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -2852,6 +2864,21 @@
           }
         }
       },
+      "MySql.Data/8.0.13": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.5.1",
+          "System.Configuration.ConfigurationManager": "4.4.1",
+          "System.Security.Permissions": "4.4.1",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/MySql.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/MySql.Data.dll": {}
+        }
+      },
       "MySqlConnector/0.44.1": {
         "type": "package",
         "dependencies": {
@@ -3531,6 +3558,18 @@
         },
         "runtime": {
           "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/4.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.4.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -4602,6 +4641,21 @@
           "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll": {}
         }
       },
+      "System.Security.Cryptography.ProtectedData/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Security.Cryptography.X509Certificates/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4652,6 +4706,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Cryptography.Xml.dll": {}
+        }
+      },
+      "System.Security.Permissions/4.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.AccessControl": "4.4.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Security.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Permissions.dll": {}
         }
       },
       "System.Security.Principal/4.3.0": {
@@ -4743,7 +4809,7 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -5044,6 +5110,21 @@
     }
   },
   "libraries": {
+    "Google.Protobuf/3.5.1": {
+      "sha512": "j/gbpRZ68sgvdi/vXI39Cj/jWG4d1dtDqfWbkjC9dErNWu/dFcIlq1LIgLscea+llZ6nzm06wz/JGziOegAL7Q==",
+      "type": "package",
+      "path": "google.protobuf/3.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.5.1.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/netstandard1.0/Google.Protobuf.dll",
+        "lib/netstandard1.0/Google.Protobuf.xml"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "zisTbxitzki256+rKY0myI2T1yLyO9+qAU8P+FXkd8Dv0Iymk484Y9SbwUlyL3igF/bpiCv7SCdv349rN/JbfQ==",
       "type": "package",
@@ -8243,6 +8324,25 @@
         "version.txt"
       ]
     },
+    "MySql.Data/8.0.13": {
+      "sha512": "mXfjg2pOdzpyd4wkXZPKYcNluzV68ggAO/LPcT7iuzU5kDS7livUDR8IsKkarEhBmRxBy0XmBnUOkEWJvfOW9Q==",
+      "type": "package",
+      "path": "mysql.data/8.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MySql.Data.dll",
+        "lib/net452/MySql.Data.xml",
+        "lib/netcoreapp2.0/MySql.Data.dll",
+        "lib/netcoreapp2.0/MySql.Data.xml",
+        "lib/netstandard1.6/MySql.Data.dll",
+        "lib/netstandard1.6/MySql.Data.xml",
+        "lib/netstandard2.0/MySql.Data.dll",
+        "lib/netstandard2.0/MySql.Data.xml",
+        "mysql.data.8.0.13.nupkg.sha512",
+        "mysql.data.nuspec"
+      ]
+    },
     "MySqlConnector/0.44.1": {
       "sha512": "AdVMqv8KVA878+AF8EkXqjac3ih1tsOzBchYHasoW69vn2Ldez0ucbzB43dmLVkmTa1sQtLtoDbk3n9S34tZyg==",
       "type": "package",
@@ -9377,6 +9477,27 @@
         "lib/portable-net45+win8+wp8+wpa81/System.Composition.TypedParts.dll",
         "system.composition.typedparts.1.0.31.nupkg.sha512",
         "system.composition.typedparts.nuspec"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/4.4.1": {
+      "sha512": "LoSjM/kLDpyLyoGsmwS5oVMRzHf/0XHkRpr3QZu/HuAv6Sfk919usTMLqD9N9VK3S4Q2+bd3tKJ0ko4MYFfq4Q==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.xml",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.4.4.1.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Console/4.3.0": {
@@ -12295,6 +12416,47 @@
         "system.security.cryptography.primitives.nuspec"
       ]
     },
+    "System.Security.Cryptography.ProtectedData/4.4.0": {
+      "sha512": "WwEexvBd+17yfY7fcS+fBGl+HADEfCJuKeDJqBT7D6j6vKwYvfLyGuq2y/MmrKORC6mbYwth7kjinO1mPhTL3g==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.xml",
+        "ref/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Security.Cryptography.X509Certificates/4.3.0": {
       "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
       "type": "package",
@@ -12366,6 +12528,26 @@
         "ref/netstandard2.0/System.Security.Cryptography.Xml.xml",
         "system.security.cryptography.xml.4.4.0.nupkg.sha512",
         "system.security.cryptography.xml.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Security.Permissions/4.4.1": {
+      "sha512": "tXBMO8OJEuw9c4KjLj4fwxJusely90azF24Uktz/evgvowAtU963HYl+G93gaRZr6pvYvsSPrjkN4+2pdVUbgw==",
+      "type": "package",
+      "path": "system.security.permissions/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Security.Permissions.dll",
+        "lib/netstandard2.0/System.Security.Permissions.dll",
+        "ref/net461/System.Security.Permissions.dll",
+        "ref/netstandard2.0/System.Security.Permissions.dll",
+        "ref/netstandard2.0/System.Security.Permissions.xml",
+        "system.security.permissions.4.4.1.nupkg.sha512",
+        "system.security.permissions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -13565,6 +13747,7 @@
       "Microsoft.EntityFrameworkCore >= 2.1.4",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
+      "MySql.Data >= 8.0.13",
       "Pomelo.EntityFrameworkCore.MySql >= 2.1.2"
     ]
   },
@@ -13575,11 +13758,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Загрузки.Л\\Курсач\\TestAsp\\TestAsp\\TestAsp.csproj",
+      "projectUniqueName": "D:\\Загрузки.Л\\Курсач\\GameShop\\TestAsp\\TestAsp\\TestAsp.csproj",
       "projectName": "TestAsp",
-      "projectPath": "D:\\Загрузки.Л\\Курсач\\TestAsp\\TestAsp\\TestAsp.csproj",
+      "projectPath": "D:\\Загрузки.Л\\Курсач\\GameShop\\TestAsp\\TestAsp\\TestAsp.csproj",
       "packagesPath": "C:\\Users\\Wariokl\\.nuget\\packages\\",
-      "outputPath": "D:\\Загрузки.Л\\Курсач\\TestAsp\\TestAsp\\obj\\",
+      "outputPath": "D:\\Загрузки.Л\\Курсач\\GameShop\\TestAsp\\TestAsp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13629,6 +13812,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.0.3, )"
+          },
+          "MySql.Data": {
+            "target": "Package",
+            "version": "[8.0.13, )"
           },
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",

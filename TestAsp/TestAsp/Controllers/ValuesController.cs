@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using TestAsp.Models;
 
 namespace TestAsp.Controllers
 {
@@ -24,6 +25,7 @@ namespace TestAsp.Controllers
 
             using (DatabaseContext db = new DatabaseContext(options))
             {
+                //db.Database.EnsureCreated();
                 List<User> users = db.Users.ToList();
                 return users;
             }
@@ -41,14 +43,7 @@ namespace TestAsp.Controllers
         [HttpPost]
         public void AddUser([FromHeader]string name, [FromHeader]string lastname)
         {
-            DbContextOptions<DatabaseContext> options = new DbContextOptions<DatabaseContext>();
-            using (DatabaseContext db = new DatabaseContext(options))
-            {
-                db.Database.EnsureCreated();
-                User user = new User{ Name = name, Lastname = lastname };
-                db.Users.Add(user);
-                db.SaveChanges();                
-            }
+            
         }
 
         // POST api/values
@@ -60,7 +55,7 @@ namespace TestAsp.Controllers
         //        value = name + ": " + value;
         //        Console.WriteLine("Отправлена запись: {0}", value);
         //        Messages.messages.Add(value);
-                
+
         //    }
         //    else
         //    {
@@ -70,7 +65,7 @@ namespace TestAsp.Controllers
         //    }
         //    return Messages.messages;
         //}
-        
+
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)

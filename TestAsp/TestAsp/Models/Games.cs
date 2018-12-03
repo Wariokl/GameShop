@@ -7,7 +7,7 @@ namespace TestAsp.Models
 {
     public class Games
     {
-        public int GameID { get; set; }
+        public int GamesID { get; set; }
         public string Name { get; set; }
         public int Genre { get; set; }
         public int Category { get; set; }

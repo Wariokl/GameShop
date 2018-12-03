@@ -17,6 +17,14 @@ namespace TestAsp
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            DbContextOptions<DatabaseContext> options = new DbContextOptions<DatabaseContext>();
+            using (DatabaseContext db = new DatabaseContext(options))
+            {
+                //db.Database.EnsureCreated();
+                // User user = new User { Name = name, Lastname = lastname };
+                // db.Users.Add(user);
+                db.SaveChanges();
+            }
 
         }
 
@@ -27,7 +35,7 @@ namespace TestAsp
         {
             services.AddDbContext<DatabaseContext>(options => options.UseMySql("server=localhost;UserId=server;Password=server;database=mariadb;"));
             services.AddMvc();
-            services.AddSingleton();
+           // services.AddSingleton();
             
             //services.AddSingleton<Messages>();
         }
@@ -43,5 +51,6 @@ namespace TestAsp
             app.UseMvc();
            
         }
+
     }
 }

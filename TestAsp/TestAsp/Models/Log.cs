@@ -9,6 +9,6 @@ namespace TestAsp.Models
     {
         public int LogID { get; set; }
         public int UserID { get; set; }
-        public ActionsEnum[] action { get; set; }
+        public ActionsEnum action { get; set; }
     }
 }
