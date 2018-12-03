@@ -1,0 +1,11 @@
+C:\Users\whaT\source\repos\TestAsp\TestAsp\bin\Release\netcoreapp2.0\TestAsp.deps.json
+C:\Users\whaT\source\repos\TestAsp\TestAsp\bin\Release\netcoreapp2.0\TestAsp.runtimeconfig.json
+C:\Users\whaT\source\repos\TestAsp\TestAsp\bin\Release\netcoreapp2.0\TestAsp.runtimeconfig.dev.json
+C:\Users\whaT\source\repos\TestAsp\TestAsp\bin\Release\netcoreapp2.0\TestAsp.dll
+C:\Users\whaT\source\repos\TestAsp\TestAsp\bin\Release\netcoreapp2.0\TestAsp.pdb
+C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Release\netcoreapp2.0\TestAsp.csprojResolveAssemblyReference.cache
+C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Release\netcoreapp2.0\TestAsp.csproj.CoreCompileInputs.cache
+C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Release\netcoreapp2.0\TestAsp.AssemblyInfoInputs.cache
+C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Release\netcoreapp2.0\TestAsp.AssemblyInfo.cs
+C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Release\netcoreapp2.0\TestAsp.dll
+C:\Users\whaT\source\repos\TestAsp\TestAsp\obj\Release\netcoreapp2.0\TestAsp.pdb
