@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace TestAsp.Models
+{
+    public class Game
+    {
+        
+        public int GameID { get; set; }
+        public string Name { get; set; }
+        public Category Categories { get; set; }
+        public DateTime Date { get; set; }
+        public Company Companies { get; set; }
+        public int Price { get; set; }
+        public Genre genres { get; set; }
+
+        public List<GenreisGames> genreisGames { get; set; }
+
+        public Game()
+        {
+            genreisGames = new List<GenreisGames>();
+        }
+
+       
+    }
+}

@@ -9,5 +9,15 @@ namespace TestAsp.Models
     {
         public int GenreID { get; set; }
         public string GenreName { get; set; }
+
+        public List<GenreisGames> genreisGames { get; set; }
+
+        public Genre()
+        {
+            genreisGames = new List<GenreisGames>();
+        }
     }
+
+
 }
+

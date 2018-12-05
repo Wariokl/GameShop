@@ -20,9 +20,7 @@ namespace TestAsp
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
-        //WebHost.CreateDefaultBuilder(args)
-        //    .UseStartup<Startup>()
-        //    .Build();
+        
         WebHost.CreateDefaultBuilder(args)
             .UseStartup<Startup>()
            
@@ -36,7 +34,7 @@ namespace TestAsp
                     new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
                 options.ListenAnyIP(5000);
             })
-           // .UseIISIntegration()
+          
             .Build();
     }
 }

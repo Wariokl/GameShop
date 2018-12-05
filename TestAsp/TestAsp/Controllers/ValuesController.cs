@@ -11,62 +11,37 @@ namespace TestAsp.Controllers
     [Route("/")]
     public class ValuesController : Controller
     {
-        //Messages messages = new Messages();
+        private readonly DatabaseContext _context;
 
-        public ValuesController()
+    
+
+        public ValuesController(DatabaseContext context)
         {
-            
+            this._context = context;
         }
+       
+        
         // GET api/values
         [HttpGet]
-        public List<User> Get()
+        public JsonResult Get()
         {
-            DbContextOptions<DatabaseContext> options = new DbContextOptions<DatabaseContext>();
-
-            using (DatabaseContext db = new DatabaseContext(options))
-            {
-                //db.Database.EnsureCreated();
-                List<User> users = db.Users.ToList();
-                return users;
-            }
-
-            //return new string[] { "ASP", "is", "cool" };
-            //return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public List<string> Get(int id)
-        {
-            return Messages.messages;
-        }
-        [HttpPost]
-        public void AddUser([FromHeader]string name, [FromHeader]string lastname)
-        {
+            _context.Database.EnsureCreated();
+            var users = _context.Games.ToList();
+            _context.SaveChanges();
+            return Json(users);
             
         }
 
-        // POST api/values
-        //[HttpPost]
-        //public List<string> Post([FromBody]string value, [FromHeader]string name)
-        //{
-        //    if (name.Length != 0)
-        //    {
-        //        value = name + ": " + value;
-        //        Console.WriteLine("Отправлена запись: {0}", value);
-        //        Messages.messages.Add(value);
+       
 
-        //    }
-        //    else
-        //    {
-        //        value = "[" + value + "]";
-        //        Console.WriteLine("Пользователь присоединился");
-        //        Messages.messages.Add(value);
-        //    }
-        //    return Messages.messages;
-        //}
+        //POST api/values
+        [HttpPost]
+        public void AddGame([FromHeader]string _Name, [FromHeader]int _Companyid, [FromHeader]int _categoryid, [FromHeader]string _genreid)
+        {
 
+        }
         // PUT api/values/5
+
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
@@ -82,7 +57,7 @@ namespace TestAsp.Controllers
         [HttpDelete]
         public void Delete()
         {
-            Messages.messages.Clear();
+           
         }
     }
 }

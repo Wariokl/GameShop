@@ -17,15 +17,6 @@ namespace TestAsp
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            DbContextOptions<DatabaseContext> options = new DbContextOptions<DatabaseContext>();
-            using (DatabaseContext db = new DatabaseContext(options))
-            {
-                //db.Database.EnsureCreated();
-                // User user = new User { Name = name, Lastname = lastname };
-                // db.Users.Add(user);
-                db.SaveChanges();
-            }
-
         }
 
         public IConfiguration Configuration { get; }
@@ -33,11 +24,9 @@ namespace TestAsp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DatabaseContext>(options => options.UseMySql("server=localhost;UserId=server;Password=server;database=mariadb;"));
+            services.AddDbContext<DatabaseContext>();
             services.AddMvc();
-           // services.AddSingleton();
-            
-            //services.AddSingleton<Messages>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
