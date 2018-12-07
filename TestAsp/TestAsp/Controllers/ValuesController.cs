@@ -8,7 +8,7 @@ using TestAsp.Models;
 
 namespace TestAsp.Controllers
 {
-    [Route("/")]
+   
     public class ValuesController : Controller
     {
         private readonly DatabaseContext _context;
@@ -19,45 +19,99 @@ namespace TestAsp.Controllers
         {
             this._context = context;
         }
-       
-        
-        // GET api/values
+
+
+        //// GET api/values
+        //[Route("/games")]
+        //[HttpGet]
+        //public JsonResult Get_games()
+        //{
+
+        //    var users = _context.Games.ToList();
+
+        //    return Json(users);
+
+        //}
+
+
+        //[Route("/genre")]
+        //[HttpGet]
+        //public JsonResult Get_genre()
+        //{
+
+        //    var cat = _context.Genries.ToList();
+
+        //    return Json(cat);
+
+        //}
+
+        //[Route("/ccompany")]
+
+        //[HttpGet]
+        //public JsonResult Get_company()
+        //{
+
+        //    var cat = _context.Companies.ToList();
+
+        //    return Json(cat);
+
+        //}
+
+        //[Route("/library")]
+        //[HttpGet]
+        //public JsonResult Get_libarary()
+        //{
+
+        //    var cat = _context.Libraries.ToList();
+
+        //    return Json(cat);
+
+        //}
+        //[Route("/users")]
+        //[HttpGet]
+        //public JsonResult Get()
+        //{
+
+        //    var users = _context.Users.ToList();
+
+        //    return Json(users);
+
+        //}
+        [Route("/")]
         [HttpGet]
-        public JsonResult Get()
+        public void set_tabels()
         {
             _context.Database.EnsureCreated();
-            var users = _context.Games.ToList();
+
             _context.SaveChanges();
-            return Json(users);
-            
-        }
 
-       
-
-        //POST api/values
-        [HttpPost]
-        public void AddGame([FromHeader]string _Name, [FromHeader]int _Companyid, [FromHeader]int _categoryid, [FromHeader]string _genreid)
-        {
-
-        }
-        // PUT api/values/5
-
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
 
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+        ////POST api/values
+        //[HttpPost]
+        //public void AddGame([FromHeader]string _Name, [FromHeader]int _Companyid, [FromHeader]int _categoryid, [FromHeader]string _genreid)
+        //{
 
-        }
-        [HttpDelete]
-        public void Delete()
-        {
-           
-        }
+        //}
+        //// PUT api/values/5
+
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+
+        //}
+
+        //// DELETE api/values/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+
+        //}
+        //[HttpDelete]
+        //public void Delete()
+        //{
+
+        //}
     }
 }

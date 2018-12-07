@@ -8,8 +8,9 @@ namespace TestAsp.Models
 {
     public class Game
     {
-        
-        public int GameID { get; set; }
+        [Key]
+        public int Id { get; set; }
+   
         public string Name { get; set; }
         public Category Categories { get; set; }
         public DateTime Date { get; set; }
@@ -18,6 +19,7 @@ namespace TestAsp.Models
         public Genre genres { get; set; }
 
         public List<GenreisGames> genreisGames { get; set; }
+
 
         public Game()
         {
