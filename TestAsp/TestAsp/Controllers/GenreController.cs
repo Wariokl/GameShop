@@ -9,7 +9,7 @@ using TestAsp.Models;
 namespace TestAsp.Controllers
 {
    // [Produces("application/json")]
-    [Route("Genre")]
+    [Route("Game")]
     public class GenreController : Controller
     {
         private readonly DatabaseContext _context;
@@ -67,6 +67,8 @@ namespace TestAsp.Controllers
                 .FirstOrDefault();
             _context.Genries.Remove(entity);
             _context.SaveChanges();
+
+
 
         }
     }

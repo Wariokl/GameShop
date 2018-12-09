@@ -25,7 +25,7 @@ namespace TestAsp.Controllers
 
         [HttpGet]
 
-        public JsonResult Get_category()
+        public JsonResult Get_Company()
         {
 
             var cat = _context.Companies.ToList();

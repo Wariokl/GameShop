@@ -22,6 +22,7 @@ namespace TestAsp.Controllers
             this._context = context;
         }
 
+       
         [HttpGet]
 
         public JsonResult Get_User()
@@ -33,18 +34,32 @@ namespace TestAsp.Controllers
 
         }
 
-        [HttpPost("{value}")]
-        public void Add_user(string value)
+        [HttpPost]
+        public bool Add_user([FromHeader]string L, [FromHeader]string P, [FromHeader]string N)
         {
-            string[] x = value.Split(';');
-            _context.Users.Add(new User
-            {  
-              NickName=x[0],
-              Login=x[1],
-              Password=x[2]
-                           
-            });
-            _context.SaveChanges();
+            try
+            {
+                var entity = _context.Users
+                        .Where(l => l.Login == L || l.NickName == N)                       
+                        .First();
+                return false;   
+            }
+
+            catch
+            {
+                _context.Users.Add(new User
+                {
+                    NickName = N,
+                    Login = L,
+                    Password = P
+
+
+
+                });
+                _context.SaveChanges();
+                return true;
+            }
+          
         }
 
         [HttpPut("{value}")]
@@ -72,6 +87,28 @@ namespace TestAsp.Controllers
             _context.SaveChanges();
 
         }
+        [Route("login")]
+        [HttpGet]
+        public bool IsUserExist([FromHeader]string Login, [FromHeader]string Password)
+        {
+            bool AccsesToken=true;
+            try
+            {
+                var entity = _context.Users
+                    .Where(l => l.Login == Login)
+                    .Where(l => l.Password == Password)
+                    .First();
+            }
 
+            catch
+            {
+
+                AccsesToken = false;
+            }
+
+
+            return AccsesToken;
+        }
+        
     }
 }

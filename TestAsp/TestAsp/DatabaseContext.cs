@@ -22,7 +22,7 @@ namespace TestAsp
        
         public DbSet<Genre> Genries { get; set; }
         public DbSet<Library> Libraries { get; set; }
-        public DbSet<Log> Log { get; set; }
+        //public DbSet<Log> Log { get; set; }
         public DbSet<GenreisGames> genreisGames { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
