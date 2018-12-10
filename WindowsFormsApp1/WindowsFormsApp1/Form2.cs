@@ -23,7 +23,97 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
         string UserID;
-        private void getLibrary()
+        private void FindMaxGames()
+        {
+            List<Library> lib = getLibrary();
+            List<User> users = GetUsers();
+            User user = new User();
+            int MaxGame = 0;
+            int[] Maxgames = new int[lib.OrderBy(x => x.UserID).Count()];
+            foreach (var item in lib)
+            {
+                Maxgames[Convert.ToInt32(item.UserID)]++;
+            }
+            int max = -1;
+            int index = -1;
+            for (int i = 0; i < Maxgames.Length; i++)
+                // Если максимальная стоимость меньше, либо равно текущей проверяемой
+
+                if (max <= Maxgames[i])
+                {
+                    // Запоминаем новое максимальное значение
+                    max = Maxgames[i];
+                    // Запоминаем порядковый номер
+                    index = i;
+                }
+            var maxid = lib
+                .Where(l => l.UserID == Convert.ToString(index))
+                .First();
+            user = users.Where(u => u.UserId == Convert.ToInt32(maxid.UserID))
+                 .First();
+
+
+            label2.Text = user.NickName;
+        }
+        private void FindMostPopularGame()
+        {
+            List<Library> lib = getLibrary();
+            List<Game> games = getGamesAll();
+            Game game = new Game();
+            int MaxxGame = 0;
+            int[] Maxxgames = new int[lib.OrderBy(x => x.GameId).Count()];
+            foreach (var item in lib)
+            {
+                Maxxgames[Convert.ToInt32(item.GameId)]++;
+            }
+            int maxx = -1;
+            int indexx = -1;
+            for (int i = 0; i < Maxxgames.Length; i++)
+                // Если максимальная стоимость меньше, либо равно текущей проверяемой
+
+                if (maxx <= Maxxgames[i])
+                {
+                    // Запоминаем новое максимальное значение
+                    maxx = Maxxgames[i];
+                    // Запоминаем порядковый номер
+                    indexx = i;
+                }
+            var maxxid = lib
+                .Where(l => l.GameId == Convert.ToString(indexx))
+                .First();
+            game = games.Where(u => u.Id == Convert.ToInt32(maxxid.GameId))
+                 .First();
+
+
+            label5.Text = game.Name;
+
+            // dataGridView1.DataSource = lib;
+        }
+        private List<User> GetUsers()
+        {
+
+
+            WebRequest request = WebRequest.Create("http://localhost:5000/user/");
+            request.Method = "GET";
+
+            request.ContentType = "application/json";
+
+            List<User> users = new List<User>();
+            string result;
+            WebResponse response = request.GetResponse();
+            using (Stream stream = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    result = reader.ReadToEnd();
+                }
+                foreach (var item in JsonConvert.DeserializeObject<List<User>>(result))
+                    users.Add(item);
+            }
+            //dataGridView1.DataSource = genres;
+            return users;
+        }
+        private List<Library> getLibrary()
         {
             WebRequest request = WebRequest.Create("http://localhost:5000/Library/");
             request.Method = "GET";
@@ -43,7 +133,7 @@ namespace WindowsFormsApp1
                 foreach (var item in JsonConvert.DeserializeObject<List<Library>>(result))
                     libraries.Add(item);
             }
-            dataGridView1.DataSource = libraries;
+            return libraries;
             
         }
         private void AddLibrary()
@@ -296,6 +386,48 @@ namespace WindowsFormsApp1
            // dataGridView1.DataSource = games;
             return games;
         }
+
+        private List<Game> getGamesAll()
+        {
+            WebRequest request = WebRequest.Create("http://localhost:5000/Games/");
+            request.Method = "GET";
+            string _name, _category, _company, _price, _genre;
+
+
+
+
+
+            request.ContentType = "application/json";
+           
+                request.Headers.Add("_Name", "");
+           
+                request.Headers.Add("_Genre", "");
+          
+                request.Headers.Add("_Category", "");
+           
+                request.Headers.Add("_Company", "");
+           
+                request.Headers.Add("_Price", "");
+
+            request.ContentLength = 0;
+
+            List<Game> games = new List<Game>();
+
+            string result;
+            WebResponse response = request.GetResponse();
+            using (Stream stream = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    result = reader.ReadToEnd();
+                }
+                foreach (var item in JsonConvert.DeserializeObject<List<Game>>(result))
+
+                    games.Add(item);
+            }
+            // dataGridView1.DataSource = games;
+            return games;
+        }
         private int getIdGame()
         {
             WebRequest request = WebRequest.Create("http://localhost:5000/Games/");
@@ -492,12 +624,21 @@ namespace WindowsFormsApp1
         {
             if (checkBox14.Checked)
             {
-                AddLibrary();
+               AddLibrary();
             }
             else
             {
-                getLibrary();
+                dataGridView1.DataSource = getLibrary();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FindMaxGames();
+
+            FindMostPopularGame();
+            
+
         }
     }
 }

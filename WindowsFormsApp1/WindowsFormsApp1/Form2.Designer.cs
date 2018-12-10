@@ -63,6 +63,11 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -196,7 +201,7 @@
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(211, 236);
+            this.panel1.Location = new System.Drawing.Point(214, 301);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(244, 202);
             this.panel1.TabIndex = 12;
@@ -239,7 +244,7 @@
             this.panel2.Controls.Add(this.checkBox8);
             this.panel2.Controls.Add(this.checkBox7);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(12, 236);
+            this.panel2.Location = new System.Drawing.Point(15, 301);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(193, 111);
             this.panel2.TabIndex = 13;
@@ -300,7 +305,7 @@
             this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.checkBox10);
             this.panel3.Controls.Add(this.GetCategory);
-            this.panel3.Location = new System.Drawing.Point(12, 354);
+            this.panel3.Location = new System.Drawing.Point(15, 419);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(193, 84);
             this.panel3.TabIndex = 14;
@@ -341,7 +346,7 @@
             this.panel4.Controls.Add(this.textBox6);
             this.panel4.Controls.Add(this.checkBox13);
             this.panel4.Controls.Add(this.checkBox12);
-            this.panel4.Location = new System.Drawing.Point(461, 355);
+            this.panel4.Location = new System.Drawing.Point(464, 420);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(193, 83);
             this.panel4.TabIndex = 15;
@@ -392,7 +397,7 @@
             this.panel5.Controls.Add(this.comboBox3);
             this.panel5.Controls.Add(this.checkBox14);
             this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(461, 236);
+            this.panel5.Location = new System.Drawing.Point(464, 301);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(193, 111);
             this.panel5.TabIndex = 16;
@@ -424,11 +429,60 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(15, 272);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(121, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Статистика";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(268, 214);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 214);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(236, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Пользователь у которого боольше всего игр";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "самая популяная игра";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(271, 252);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 21;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 449);
+            this.ClientSize = new System.Drawing.Size(668, 515);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -449,6 +503,7 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -489,5 +544,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

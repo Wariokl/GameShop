@@ -45,7 +45,7 @@ namespace TestAsp.Controllers
 
         [HttpPut("{value}")]
 
-        public void Change_category(string value)
+        public void Change_Company(string value)
         {
             string[] x = value.Split(';');
             var entity = _context.Companies.Where(c => c.CompanyName == x[0]).ToList();
@@ -58,7 +58,7 @@ namespace TestAsp.Controllers
 
         [HttpDelete("{value}")]
 
-        public void Delete_category(string value)
+        public void Delete_Company(string value)
         {
 
             var entity = _context.Companies
