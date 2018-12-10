@@ -24,53 +24,97 @@ namespace TestAsp.Controllers
 
         [HttpGet]
 
-        public JsonResult Get_Game()
+        public JsonResult Get_Game([FromHeader]string _Name, [FromHeader]string _Category, [FromHeader]string _Company, [FromHeader]string _Genre , [FromHeader]string _Price)
         {
 
             var ga = _context.Games
                 .Select(game => new
                 {
                     game.Id,
-                    game.Name,
-
-                    //GameGenre = game.genres.GenreName,
+                    game.Name,                    
                     GameCategory = game.Categories.CategoryName,
-                    GameCompany = game.Companies.CompanyName,
-                   
-                    GamePrice = game.Price
+                    GameCompany = game.Companies.CompanyName,                   
+                    GamePrice = game.Price,
+                    GameGenre = game.genres.GenreName
 
                 })
-
                 .ToList();
-            List<List<GenreisGames>> ges = new List<List<GenreisGames>>();
-            List<GenreisGames> ge = new List<GenreisGames>();
-            for (int i = 0; i < ga.Count; i++)
+
+            if (_Name != "")
             {
-                ge = _context.genreisGames
-               .Where(genre => genre.gameID == ga[i].Id)
-               .ToList();
-                ges.Add(ge);
+                
+                for (int i = 0; i < ga.Count; i++)
+                {
+                    if (ga[i].Name!=_Name)
+                    {
+                        ga.RemoveAt(i);
+                        i--;
+                    }
+                }
             }
+            if (_Category != "")
+                for (int i = 0; i < ga.Count; i++)
+                {
+                    if (ga[i].GameCategory != _Category)
+                    {
+                        ga.RemoveAt(i);
+                        i--;
+                    }
+                }
+            if (_Company != "")
+                for (int i = 0; i < ga.Count; i++)
+                {
+                    if (ga[i].GameCompany != _Company)
+                    {
+                        ga.RemoveAt(i);
+                        i--;
+                    }
+                }
+            if (_Price != "")
+                for (int i = 0; i < ga.Count; i++)
+                {
+                    if (ga[i].GamePrice > Convert.ToInt32(_Price))
+                    {
+                        ga.RemoveAt(i);
+                        i--;
+                    }
+                }
+            if (_Genre != "")
+                for (int i = 0; i < ga.Count; i++)
+                {
+                    if (ga[i].GameGenre !=_Genre)
+                    {
+                        ga.RemoveAt(i);
+                        i--;
+                    }
+                }
+
+
+
+
             return Json(ga);
 
         }
 
-        [HttpPost("{value}")]
-        public void Add_Game(string value, string value2)
+        [HttpPost]
+        public void Add_Game([FromHeader]string _Name, [FromHeader]string _Category, [FromHeader]string _Company, [FromHeader]string _Genre, [FromHeader]string _Price)
         {
-            string[] x = value.Split(';');
+
 
             var cat = _context.Categories
-                .Find(Convert.ToInt32(x[1]));
+                .Where(c => c.CategoryName == _Category)
+                .FirstOrDefault();
+                
 
 
 
             var comp = _context.Companies
-                .Find(Convert.ToInt32(x[2]));
-                
+                .Where(c => c.CompanyName == _Company)
+                .FirstOrDefault();
 
-
-            
+            var genr = _context.Genries
+                .Where(c => c.GenreName == _Genre)
+                .FirstOrDefault();
 
 
 
@@ -78,10 +122,11 @@ namespace TestAsp.Controllers
 
             Game game = new Game
             {
-               Name=x[0],
+                Name = _Name,
+                genres = genr,
                Categories = cat,
                Companies = comp,
-               Price=Convert.ToInt32(x[3])                
+               Price=Convert.ToInt32(_Price)                
             };
 
             _context.Games.Add(game);
@@ -89,23 +134,7 @@ namespace TestAsp.Controllers
             _context.SaveChanges();
 
 
-            for (int i = x.Length - 1; i > 3; i--)
-            {
-                var gamegen = _context.Games
-                    .LastOrDefault();
-                var genre = _context.Genries
-                    .Where(c => c.GenreName == x[i])
-                    .FirstOrDefault();
-                GenreisGames genreisGames = new GenreisGames
-                {
-                    gameID = gamegen.Id,
-                    genreID = genre.GenreID
-
-
-                };
-                _context.genreisGames.Add(genreisGames);
-                _context.SaveChanges();
-            }
+            
         }
 
         [HttpDelete("{value}")]

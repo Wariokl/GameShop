@@ -38,16 +38,16 @@ namespace TestAsp.Controllers
             return Json(lib);
         }
 
-        [HttpPost("{value}")]
-        public void Add_Company(string value, string value2)
+        [HttpPost]
+        public void Add_Company([FromHeader]string _gameid, [FromHeader]string _userid)
         {
-            string[] x = value.Split(';');
+           
             var g = _context.Games
-        .Where(c => c.Id == Convert.ToInt32(x[0]))
+        .Where(c => c.Id == Convert.ToInt32(_gameid))
         .FirstOrDefault();
 
             var u = _context.Users
-        .Where(c => c.UserId == Convert.ToInt32(x[1]))
+        .Where(c => c.UserId == Convert.ToInt32(_userid))
         .FirstOrDefault();
 
             Library lib = new Library

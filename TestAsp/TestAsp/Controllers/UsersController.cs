@@ -89,25 +89,29 @@ namespace TestAsp.Controllers
         }
         [Route("login")]
         [HttpGet]
-        public bool IsUserExist([FromHeader]string Login, [FromHeader]string Password)
+        public string IsUserExist([FromHeader]string Login, [FromHeader]string Password)
         {
-            bool AccsesToken=true;
+            string AccsesToken="true";
             try
             {
                 var entity = _context.Users
                     .Where(l => l.Login == Login)
                     .Where(l => l.Password == Password)
                     .First();
+                AccsesToken += ';';
+                AccsesToken += Convert.ToString(entity.UserId);
+                return AccsesToken;
             }
 
             catch
             {
 
-                AccsesToken = false;
+                AccsesToken = "false";
+                return AccsesToken;
             }
 
 
-            return AccsesToken;
+            
         }
         
     }

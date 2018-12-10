@@ -21,12 +21,13 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+       string UserId;
         private string GetAccesToken()
         {
 
             string Login = textBox1.Text;
             string Password = textBox2.Text;
-            WebRequest request = WebRequest.Create("http://localhost:5000/user/user/login");
+            WebRequest request = WebRequest.Create("http://localhost:5000/user/login");
             request.Method = "GET";
             
             request.ContentType = "application/json";
@@ -50,22 +51,31 @@ namespace WindowsFormsApp1
 
         private void Enter_Button_Click(object sender, EventArgs e)
         {
-            if(Convert.ToBoolean(GetAccesToken())==true)
+            if (textBox1.Text != ""|| textBox2.Text != "")
             {
-                
-                Form2 f2 = new Form2();
-                this.Hide();
-             f2.Show();
-                
+                string[] str = GetAccesToken().Split(';');
+                UserId = str[1];
+                if (Convert.ToBoolean(str[0]) == true)
+                {
 
-               
+                    Form2 f2 = new Form2(UserId);
+                    this.Hide();
+                    f2.Show();
 
 
 
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Wrong");
+                }
             }
             else
             {
-                MessageBox.Show("Wrong");
+                MessageBox.Show("введите логин/пароль");
             }
         }
 

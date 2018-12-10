@@ -34,11 +34,11 @@ namespace TestAsp.Controllers
 
         }
 
-        [HttpPost("{value}")]
-        public void set_Company(string value,string value2)
+        [HttpPost]
+        public void set_Company([FromHeader]string _Name, [FromHeader]string _Country)
         {
-            string[] x= value.Split(';');
-            _context.Companies.Add(new Company { CompanyName= x[0] ,Country=x[1]});
+            
+            _context.Companies.Add(new Company { CompanyName= _Name ,Country=_Country});
 
             _context.SaveChanges();
         }

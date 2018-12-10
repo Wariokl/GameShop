@@ -9,7 +9,7 @@ using TestAsp.Models;
 namespace TestAsp.Controllers
 {
    // [Produces("application/json")]
-    [Route("Game")]
+    [Route("genre")]
     public class GenreController : Controller
     {
         private readonly DatabaseContext _context;
@@ -32,13 +32,13 @@ namespace TestAsp.Controllers
 
         }
 
-        [HttpPost("{value}")]
-        public void Add_Genre(string value)
+        [HttpPost]
+        public void Add_Genre([FromHeader]string _Name)
         {
-            string[] x = value.Split(';');
+            
             _context.Genries.Add(new Genre
             {
-                GenreName=value
+                GenreName=_Name
 
             });
             _context.SaveChanges();

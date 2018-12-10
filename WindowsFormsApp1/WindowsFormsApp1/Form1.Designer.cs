@@ -38,23 +38,23 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 51);
+            this.textBox1.Location = new System.Drawing.Point(9, 55);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 20);
+            this.textBox1.Size = new System.Drawing.Size(253, 20);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(9, 114);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(289, 20);
+            this.textBox2.Size = new System.Drawing.Size(253, 20);
             this.textBox2.TabIndex = 1;
             // 
             // Enter_Button
             // 
             this.Enter_Button.Location = new System.Drawing.Point(9, 162);
             this.Enter_Button.Name = "Enter_Button";
-            this.Enter_Button.Size = new System.Drawing.Size(142, 176);
+            this.Enter_Button.Size = new System.Drawing.Size(125, 64);
             this.Enter_Button.TabIndex = 2;
             this.Enter_Button.Text = "Войти";
             this.Enter_Button.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@
             // Login_Lable
             // 
             this.Login_Lable.AutoSize = true;
-            this.Login_Lable.Location = new System.Drawing.Point(41, 26);
+            this.Login_Lable.Location = new System.Drawing.Point(12, 39);
             this.Login_Lable.Name = "Login_Lable";
             this.Login_Lable.Size = new System.Drawing.Size(38, 13);
             this.Login_Lable.TabIndex = 3;
@@ -73,7 +73,7 @@
             // Password_Lable
             // 
             this.Password_Lable.AutoSize = true;
-            this.Password_Lable.Location = new System.Drawing.Point(41, 95);
+            this.Password_Lable.Location = new System.Drawing.Point(12, 98);
             this.Password_Lable.Name = "Password_Lable";
             this.Password_Lable.Size = new System.Drawing.Size(45, 13);
             this.Password_Lable.TabIndex = 4;
@@ -81,11 +81,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(157, 162);
+            this.button1.Location = new System.Drawing.Point(140, 162);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 176);
+            this.button1.Size = new System.Drawing.Size(122, 64);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
+            this.button1.Text = "Зарегистрироваться";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 350);
+            this.ClientSize = new System.Drawing.Size(274, 238);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Password_Lable);
             this.Controls.Add(this.Login_Lable);

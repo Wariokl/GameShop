@@ -17,15 +17,15 @@ namespace TestAsp.Models
         //public DateTime Date { get; set; }
         public Company Companies { get; set; }
         public int Price { get; set; }
-       // public Genre genres { get; set; }
-        [NotMapped]
-        public List<GenreisGames> genreisGames { get; set; }
+        public Genre genres { get; set; }
+        //[NotMapped]
+        //public List<GenreisGames> genreisGames { get; set; }
 
 
-        public Game()
-        {
-            genreisGames = new List<GenreisGames>();
-        }
+        //public Game()
+        //{
+        //    genreisGames = new List<GenreisGames>();
+        //}
 
        
     }

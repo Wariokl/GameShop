@@ -35,11 +35,11 @@ namespace TestAsp.Controllers
 
         }
        
-        [HttpPost("{value}")]
-        public void Add_category(string value)
+        [HttpPost]
+        public void Add_category([FromHeader]string _Name)
         {
 
-            _context.Categories.Add(new Category { CategoryName = value });
+            _context.Categories.Add(new Category { CategoryName = _Name });
             _context.SaveChanges();
         }
         [HttpPut("{value}")]

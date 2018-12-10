@@ -14,16 +14,12 @@ namespace TestAsp.Models
    
         public string gameCompany { get; set; }
         public string gamePrice { get; set; }
-     
-      
-        //public List<GenreisGames> genreisGames { get; set; }
 
 
-        //public Game()
-        //{
-        //    genreisGames = new List<GenreisGames>();
-        //}
+        public string gamegenre { get; set; }
 
-       
+
+
+
     }
 }
